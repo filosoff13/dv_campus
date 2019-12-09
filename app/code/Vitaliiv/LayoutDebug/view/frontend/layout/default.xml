@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+        <referenceContainer name="product.info.main">
+<!--            <block class="DvCampus\Catalog\Block\Product\View\Demo" name="product.info.demo" before="product.info.details" template="DvCampus_Catalog::product/view/demo.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="int_variable" xsi:type="number">777</argument>-->
+<!--                    <argument name="string_variable" xsi:type="string">Some string</argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+
+            <block class="Magento\Cms\Block\Block" name="demo.store" before="product.info.details">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">promo</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+    </body>
+</page>
