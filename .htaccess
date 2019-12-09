@@ -145,8 +145,8 @@
     SetEnvIf Host .*vitalii-vitkovskyi.local.* MAGE_RUN_CODE=base
     SetEnvIf Host .*vitalii-vitkovskyi.local.* MAGE_RUN_TYPE=website
 
-    SetEnvIf Host .*vitalii-vitkovskyi2.local.* MAGE_RUN_CODE=additional_website
-    SetEnvIf Host .*vitalii-vitkovskyi2.local.* MAGE_RUN_TYPE=website
+    SetEnvIf Host .*vitalii-vitkovskyi-additional.local.* MAGE_RUN_CODE=additional_website
+    SetEnvIf Host .*vitalii-vitkovskyi-additional.local.* MAGE_RUN_TYPE=website
 ############################################
 ## you can put here your magento root folder
 ## path relative to web root
