@@ -1,27 +1,20 @@
 <?php
+declare(strict_types=1);
 
 namespace Vitaliiv\LayoutDebug\Observer;
 
-class Layout
+class Layout implements \Magento\Framework\Event\ObserverInterface
 {
-    private $logger;
-
     /**
-     * Layout constructor.
-     * @param \Psr\Log\LoggerInterface $logger
+     * @param \Magento\Framework\Event\Observer $observer
+     * @return void
      */
-    public function __construct( \Psr\Log\LoggerInterface $logger) {
-        $this->logger = $logger;
-    }
-
-    public function execute(\Magento\Framework\Event\Observer $observer)
+    public function execute(\Magento\Framework\Event\Observer $observer): void
     {
-        $xml = $observer->getEvent()->getLayout()->getXmlString();
-        /*$this->_logger->debug($xml);*//*If you use it, check ouput string xml in var/debug.log*/
+        $xml = $observer->getEvent()->getData('layout')->getXmlString();
         $writer = new \Zend\Log\Writer\Stream(BP . '/pub/layout_block.xml');
         $logger = new \Zend\Log\Logger();
         $logger->addWriter($writer);
         $logger->info($xml);
-        return $this;
     }
 }
